@@ -7,7 +7,7 @@ document
 document.querySelector(".book-form").addEventListener("submit", (event) => {
   event.preventDefault();
   addNewBook(myLibrary);
-})
+});
 
 function Book(title, author, pages, read, id) {
   this.title = title;
@@ -23,12 +23,12 @@ Book.prototype.info = function () {
 };
 
 function deleteBook(id) {
-  myLibrary = myLibrary.filter(book => (Number(book.id) !== Number(id)));
+  myLibrary = myLibrary.filter((book) => Number(book.id) !== Number(id));
   addBooksToLibrary(myLibrary);
 }
 
 function toggleRead(id) {
-  myLibrary = myLibrary.map(book => {
+  myLibrary = myLibrary.map((book) => {
     if (book.id == id) {
       book.read = !book.read;
       return book;
@@ -47,21 +47,23 @@ function addBooksToLibrary(array) {
     bookInfo.innerText = book.info();
 
     const deleteButton = document.createElement("button");
-    deleteButton.innerText = "DELETE"
+    deleteButton.innerText = "DELETE";
+    deleteButton.className = "delete-btn";
     deleteButton.addEventListener("click", () => {
       deleteBook(book.id);
     });
 
     const toggleReadButton = document.createElement("button");
     toggleReadButton.innerText = "TOGGLE READ";
+    toggleReadButton.className = "toggle-btn";
     toggleReadButton.addEventListener("click", () => {
       toggleRead(book.id);
     });
 
     const bookElement = document.createElement("div");
     bookElement.appendChild(bookInfo);
-    bookElement.appendChild(deleteButton);
     bookElement.appendChild(toggleReadButton);
+    bookElement.appendChild(deleteButton);
     bookElement.id = book.id;
 
     document.querySelector(".main").appendChild(bookElement);
@@ -82,7 +84,7 @@ function addNewBook(array) {
     document.getElementById("author").value,
     document.getElementById("pages").value,
     document.getElementById("read").checked,
-    Date.now(),
+    Date.now()
   );
 
   document.getElementById("title").value = "";
