@@ -163,7 +163,6 @@ button:hover {
 }
 
 .main > div > p {
-  border: 1px solid black;
   flex: 1;
   padding: 20px;
   font-size: 1.4rem;
@@ -171,7 +170,7 @@ button:hover {
 }
 
 .toggle-btn {
-  background-color: rgb(52, 53, 46);
+  background-color: rgb(2, 129, 123);
 }
 
 .delete-btn {
