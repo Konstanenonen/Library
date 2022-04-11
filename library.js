@@ -1,3 +1,5 @@
+"use strict";
+
 let myLibrary = [];
 
 document
@@ -36,7 +38,6 @@ function toggleRead(id) {
       return book;
     }
   });
-
   addBooksToLibrary(myLibrary);
 }
 
