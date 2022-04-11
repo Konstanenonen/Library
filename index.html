@@ -1,27 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Library</title>
-</head>
-<body>
-  <div class="container">
-    <header class="header">
-
-    </header>
-    <div class="form-area">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Library</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header"></header>
+      <div class="form-area">
+        <button class="show-book-form-btn" type="button">NEW BOOK</button>
+        <form class="book-form hidden">
+          <h2>Book form</h2>
+          <ul class="input-container">
+            <li class="input-field">
+              <label for="title">TITLE</label>
+              <input type="text" name="title" id="title" required />
+            </li>
+            <li class="input-field">
+              <label for="author">AUTHOR</label>
+              <input type="text" name="author" id="author" required />
+            </li>
+            <li class="input-field">
+              <label for="pages">NUMBER OF PAGES</label>
+              <input type="number" name="pages" id="pages" min="1" required />
+            </li>
+            <li class="input-field">
+              <label for="read">HAS BEEN READ</label>
+              <input
+                type="checkbox"
+                id="read"
+                name="read"
+              />
+            </li>
+          </ul>
+          <button type="submit" class="add-book-btn">ADD BOOK</button>
+        </form>
+      </div>
+      <main class="main"></main>
+      <footer class="footer"></footer>
     </div>
-    <main class="main">
-
-    </main>
-    <footer class="footer">
-
-    </footer>
-  </div>
-  <script src="library.js"></script>
-</body>
+    <script src="library.js"></script>
+  </body>
 </html>

@@ -88,3 +88,7 @@ body {
 .footer {
   grid-area: footer;
 }
+
+.hidden {
+  display: none;
+}
