@@ -43,8 +43,19 @@ function toggleRead(id) {
 function addBooksToLibrary(array) {
   document.querySelector(".main").innerHTML = "";
   array.forEach((book) => {
-    const bookInfo = document.createElement("p");
-    bookInfo.innerText = book.info();
+    const titleElement = document.createElement("h2");
+    titleElement.innerText = `${book.title} by ${book.author}`;
+
+    const pagesElement = document.createElement("p");
+    pagesElement.innerText = `Pages: ${book.pages}`;
+
+    const readElement = document.createElement("p");
+    readElement.innerText = book.read ? `Read: Yes` : `Read: No`;
+
+    const bookInfoArea = document.createElement("div");
+    bookInfoArea.appendChild(titleElement);
+    bookInfoArea.appendChild(pagesElement);
+    bookInfoArea.appendChild(readElement);
 
     const deleteButton = document.createElement("button");
     deleteButton.innerText = "DELETE";
@@ -61,7 +72,7 @@ function addBooksToLibrary(array) {
     });
 
     const bookElement = document.createElement("div");
-    bookElement.appendChild(bookInfo);
+    bookElement.appendChild(bookInfoArea);
     bookElement.appendChild(toggleReadButton);
     bookElement.appendChild(deleteButton);
     bookElement.id = book.id;

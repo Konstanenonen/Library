@@ -15,9 +15,8 @@
       <div class="form-area">
         <button class="show-book-form-btn" type="button">NEW BOOK</button>
         <p class="info-text">
-          Add new books to the library by clicking the button above. You can
-          also delete individual books form their own cards and toggle their
-          read status.
+          Add new books to the library by clicking the button above. The books
+          also have buttons for deleting the book or the toggling read status.
         </p>
         <form class="book-form hidden">
           <h2>Book form</h2>
@@ -34,9 +33,9 @@
               <label for="pages">NUMBER OF PAGES</label>
               <input type="number" name="pages" id="pages" min="1" required />
             </li>
-            <li class="input-field">
-              <label for="read">HAS BEEN READ</label>
+            <li class="checkbox-field">
               <input type="checkbox" id="read" name="read" />
+              <label for="read">I HAVE READ THIS BOOK</label>
             </li>
           </ul>
           <button type="submit" class="add-book-btn">ADD BOOK</button>
