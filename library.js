@@ -71,6 +71,9 @@ function addBooksToLibrary(array) {
 function toggleForm() {
   const form = document.querySelector(".book-form");
   form.classList.toggle("hidden");
+
+  const infoText = document.querySelector(".info-text");
+  infoText.classList.toggle("hidden");
 }
 
 function addNewBook(array) {

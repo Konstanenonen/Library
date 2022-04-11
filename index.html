@@ -9,9 +9,16 @@
   </head>
   <body>
     <div class="container">
-      <header class="header"></header>
+      <header class="header">
+        <h1>Library App</h1>
+      </header>
       <div class="form-area">
         <button class="show-book-form-btn" type="button">NEW BOOK</button>
+        <p class="info-text">
+          Add new books to the library by clicking the button above. You can
+          also delete individual books form their own cards and toggle their
+          read status.
+        </p>
         <form class="book-form hidden">
           <h2>Book form</h2>
           <ul class="input-container">
@@ -29,11 +36,7 @@
             </li>
             <li class="input-field">
               <label for="read">HAS BEEN READ</label>
-              <input
-                type="checkbox"
-                id="read"
-                name="read"
-              />
+              <input type="checkbox" id="read" name="read" />
             </li>
           </ul>
           <button type="submit" class="add-book-btn">ADD BOOK</button>
