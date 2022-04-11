@@ -23,7 +23,20 @@ Book.prototype.info = function () {
 };
 
 function deleteBook(id) {
-  myLibrary = myLibrary.filter(book => (book.id != id));
+  myLibrary = myLibrary.filter(book => (Number(book.id) !== Number(id)));
+  addBooksToLibrary(myLibrary);
+}
+
+function toggleRead(id) {
+  myLibrary = myLibrary.map(book => {
+    if (book.id == id) {
+      book.read = !book.read;
+      return book;
+    } else {
+      return book;
+    }
+  });
+
   addBooksToLibrary(myLibrary);
 }
 
@@ -37,11 +50,18 @@ function addBooksToLibrary(array) {
     deleteButton.innerText = "DELETE"
     deleteButton.addEventListener("click", () => {
       deleteBook(book.id);
-    })
+    });
+
+    const toggleReadButton = document.createElement("button");
+    toggleReadButton.innerText = "TOGGLE READ";
+    toggleReadButton.addEventListener("click", () => {
+      toggleRead(book.id);
+    });
 
     const bookElement = document.createElement("div");
     bookElement.appendChild(bookInfo);
     bookElement.appendChild(deleteButton);
+    bookElement.appendChild(toggleReadButton);
     bookElement.id = book.id;
 
     document.querySelector(".main").appendChild(bookElement);
