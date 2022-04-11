@@ -182,6 +182,13 @@ button:hover {
   grid-area: footer;
   background-color: rgb(243, 242, 242);
   border-top: 1px solid black;
+  display: grid;
+  place-items: center;
+}
+
+.footer > p {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .hidden {
