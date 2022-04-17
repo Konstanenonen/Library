@@ -11,18 +11,21 @@ document.querySelector(".book-form").addEventListener("submit", (event) => {
   addNewBook(myLibrary);
 });
 
-function Book(title, author, pages, read, id) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.id = id;
+class Book {
+  constructor(title, author, pages, read, id) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+    this.id = id;
+  }
+
+  info() {
+    return `${this.title} by ${this.author}, ${this.pages} pages, ${
+      this.read ? "already read" : "not read yet"
+    }`;
+  }
 }
-Book.prototype.info = function () {
-  return `${this.title} by ${this.author}, ${this.pages} pages, ${
-    this.read ? "already read" : "not read yet"
-  }`;
-};
 
 function deleteBook(id) {
   myLibrary = myLibrary.filter((book) => Number(book.id) !== Number(id));
