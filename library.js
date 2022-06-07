@@ -6,8 +6,30 @@ document
   .querySelector(".show-book-form-btn")
   .addEventListener("click", toggleForm);
 
+const titleField = document.getElementById("title");
+titleField.addEventListener("input", (event) => {
+  const titleError = document.getElementById("title-error");
+  const showError = () => {
+    if (titleField.validity.valueMissing) {
+      titleError.textContent = "You need to enter a title.";
+    } else if (titleField.validity.tooShort) {
+      titleError.textContent = `Title should be at least ${titleField.minLength} characters,
+       and now is only ${titleField.value.length} characters.`;
+    }
+  };
+  if (titleField.validity.valid) {
+    titleError.textContent = "";
+    titleError.className = "";
+  } else {
+    showError();
+  }
+});
+
 document.querySelector(".book-form").addEventListener("submit", (event) => {
   event.preventDefault();
+
+  if (!titleField.validity.valid) return;
+
   addNewBook(myLibrary);
 });
 
