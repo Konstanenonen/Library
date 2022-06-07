@@ -226,6 +226,15 @@ input:invalid:focus {
   outline: none;
 }
 
+.error {
+  margin: 10px;
+  border: 2px solid red;
+  color: black;
+  background-color: rgb(244, 235, 235);
+  padding: 10px;
+  text-align: center;
+}
+
 .show-book-form-btn,
 .add-book-btn {
   background-color: rgb(30, 100, 30);

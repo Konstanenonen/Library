@@ -9,14 +9,17 @@ document
 const titleField = document.getElementById("title");
 titleField.addEventListener("input", (event) => {
   const titleError = document.getElementById("title-error");
+
   const showError = () => {
     if (titleField.validity.valueMissing) {
-      titleError.textContent = "You need to enter a title.";
+      titleError.textContent = "Please enter a title.";
     } else if (titleField.validity.tooShort) {
-      titleError.textContent = `Title should be at least ${titleField.minLength} characters,
-       and now is only ${titleField.value.length} characters.`;
+      titleError.textContent = `Minimum title length is ${titleField.minLength} charactes,
+       currently the length is ${titleField.value.length}`;
     }
+    titleError.className = "error";
   };
+
   if (titleField.validity.valid) {
     titleError.textContent = "";
     titleError.className = "";
