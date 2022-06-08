@@ -220,7 +220,7 @@ button:hover {
   margin-bottom: 20px;
 }
 
-input:invalid:focus {
+input:invalid {
   border: 1px solid red;
   background-color: rgb(244, 235, 235);
   outline: none;
