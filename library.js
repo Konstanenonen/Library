@@ -28,10 +28,62 @@ titleField.addEventListener("input", (event) => {
   }
 });
 
+const authorField = document.getElementById("author");
+authorField.addEventListener("input", (event) => {
+  const authorError = document.getElementById("author-error");
+
+  const showError = () => {
+    if (authorField.validity.valueMissing) {
+      authorError.textContent = "Please enter the author of the book.";
+    } else if (authorField.validity.tooShort) {
+      authorError.textContent = `Minimum name length is ${authorField.minLength} charactes,
+       currently the length is ${authorField.value.length}`;
+    }
+    authorError.className = "error";
+  };
+
+  if (authorField.validity.valid) {
+    authorError.textContent = "";
+    authorError.className = "";
+  } else {
+    showError();
+  }
+});
+
+const pageField = document.getElementById("pages");
+pageField.addEventListener("input", (event) => {
+  const pageError = document.getElementById("page-error");
+
+  const showError = () => {
+    if (pageField.validity.typeMismatch) {
+      pageError.textContent = "Please input only the number of pages";
+    } else if (pageField.validity.tooShort) {
+      pageError.textContent = `Minimum page length is ${apageField.minLength} charactes,
+      currently the length is ${pageField.value.length}`;
+    } else if (pageField.validity.valueMissing) {
+      pageError.textContent = "Please input the number of pages";
+    }
+    pageError.className = "error";
+  };
+
+  if (pageField.validity.valid) {
+    pageError.textContent = "";
+    pageError.className = "";
+  } else {
+    showError();
+  }
+});
+
 document.querySelector(".book-form").addEventListener("submit", (event) => {
   event.preventDefault();
 
-  if (!titleField.validity.valid) return;
+  if (
+    !titleField.validity.valid ||
+    !authorField.validity.valid ||
+    !pageField.validity.valid
+  ) {
+    return;
+  }
 
   addNewBook(myLibrary);
 });

@@ -30,17 +30,25 @@
                 name="title"
                 id="title"
                 required
-                minlength="2"
+                minlength="3"
               />
               <span id="title-error"></span>
             </li>
             <li class="input-field">
               <label for="author">AUTHOR</label>
-              <input type="text" name="author" id="author" required />
+              <input
+                type="text"
+                name="author"
+                id="author"
+                minlength="3"
+                required
+              />
+              <span id="author-error"></span>
             </li>
             <li class="input-field">
               <label for="pages">NUMBER OF PAGES</label>
               <input type="number" name="pages" id="pages" min="1" required />
+              <span id="page-error"></span>
             </li>
             <li class="checkbox-field">
               <input type="checkbox" id="read" name="read" />
