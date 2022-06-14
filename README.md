@@ -7,3 +7,7 @@ Library is a variation of todo-list app, that allows you to add boo cards to the
 # Update
 
 I changed the book objects to use the newer class syntax, where the constructor and prototype object's methods can be declared at the same time.
+
+# Update 2
+
+Added form validation with js native api
